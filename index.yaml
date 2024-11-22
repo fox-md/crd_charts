@@ -1,0 +1,23 @@
+apiVersion: v1
+entries:
+  crd_dependency:
+  - apiVersion: v2
+    appVersion: v1.13.1
+    created: "2024-11-22T16:37:48.776829469Z"
+    dependencies:
+    - condition: crds.install
+      name: crds
+      repository: ""
+      version: 3.3.3
+    description: A Helm chart for Kubernetes to test CRD deployment
+    digest: 8d2d27d525a45bdd554759cebe64e09a13fc2cfa34c177aa682edab66f6ae19d
+    kubeVersion: '>=1.30.0-0'
+    maintainers:
+    - name: G
+      url: https://gumeniuc.me
+    name: crd_dependency
+    type: application
+    urls:
+    - https://github.com/fox-md/crd_charts/releases/download/crd_dependency-3.3.3/crd_dependency-3.3.3.tgz
+    version: 3.3.3
+generated: "2024-11-22T16:37:48.776838396Z"
