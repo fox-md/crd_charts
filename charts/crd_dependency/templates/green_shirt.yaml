@@ -1,9 +1,0 @@
----
-apiVersion: stable.example.com/v1beta1
-kind: Shirt
-metadata:
-  name: green-shirt
-  annotations:
-    "helm.sh/hook": "post-install"
-spec:
-  color: green
