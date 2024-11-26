@@ -3,6 +3,25 @@ entries:
   crd_dependency:
   - apiVersion: v2
     appVersion: v1.13.1
+    created: "2024-11-26T11:09:53.66188834Z"
+    dependencies:
+    - condition: install_crds
+      name: crds
+      repository: ""
+      version: 3.3.4
+    description: A Helm chart for Kubernetes
+    digest: 12075b3065a6dc616cfcd1fe3b1b2ea7125bbd4b7e7ebcf1c08e4a8f1cc4338b
+    kubeVersion: '>=1.30.0-0'
+    maintainers:
+    - name: G
+      url: https://gumeniuc.me
+    name: crd_dependency
+    type: application
+    urls:
+    - https://github.com/fox-md/crd_charts/releases/download/crd_dependency-3.3.4/crd_dependency-3.3.4.tgz
+    version: 3.3.4
+  - apiVersion: v2
+    appVersion: v1.13.1
     created: "2024-11-22T16:37:48.776829469Z"
     dependencies:
     - condition: crds.install
@@ -20,4 +39,4 @@ entries:
     urls:
     - https://github.com/fox-md/crd_charts/releases/download/crd_dependency-3.3.3/crd_dependency-3.3.3.tgz
     version: 3.3.3
-generated: "2024-11-22T16:37:48.776838396Z"
+generated: "2024-11-26T11:09:53.661898078Z"
