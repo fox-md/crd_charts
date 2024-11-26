@@ -9,10 +9,26 @@ spec:
     plural: shirts
     singular: shirt
     kind: Shirt
+  {{ if .Values.conversion.enabled }}
+  conversion:
+    strategy: Webhook
+    webhook:
+      conversionReviewVersions: {{ .Values.conversion.webhook.conversionReviewVersions }}
+      clientConfig:
+        service:
+          namespace: {{ .Values.conversion.webhook.service.namespace }}
+          name: {{ .Values.conversion.webhook.service.name }}
+          path: {{ .Values.conversion.webhook.service.path }}
+          port: {{ .Values.conversion.webhook.service.port }}
+        url: {{ .Values.conversion.webhook.url }}
+        caBundle: {{ .Values.conversion.webhook.caBundle }}
+  {{ end }}
   versions:
   - name: v1beta1
+    deprecated: true
+    deprecationWarning: "Please consider migrating to v1"
     served: true
-    storage: true
+    storage: false
     schema:
       openAPIV3Schema:
         type: object
@@ -27,4 +43,32 @@ spec:
     additionalPrinterColumns:
     - jsonPath: .spec.color
       name: Color
+      type: string
+  - name: v1
+    served: true
+    storage: true
+    schema:
+      openAPIV3Schema:
+        type: object
+        properties:
+          spec:
+            type: object
+            properties:
+              color:
+                type: string
+              size:
+                type: string
+                description: "Shirt size"
+                enum:
+                  - S
+                  - M
+                  - L
+    selectableFields:
+    - jsonPath: .spec.color
+    additionalPrinterColumns:
+    - jsonPath: .spec.color
+      name: Color
+      type: string
+    - jsonPath: .spec.size
+      name: Size
       type: string

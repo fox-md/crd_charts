@@ -4,6 +4,6 @@ kind: Shirt
 metadata:
   name: green-shirt
   annotations:
-    "helm.sh/hook": "post-install"
+    "helm.sh/hook": "post-install,post-upgrade"
 spec:
   color: green

@@ -1,0 +1,11 @@
+conversion:
+  enabled: false
+  webhook:
+    conversionReviewVersions: [] # ["v1", "v1beta1"]
+    caBundle: null
+    url: null
+    service:
+      name: null
+      namespace: null
+      path: null
+      port: null

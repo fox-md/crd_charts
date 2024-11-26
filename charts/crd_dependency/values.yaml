@@ -1,2 +1,14 @@
+install_crds: true
+
 crds:
-  install: true
+  conversion:
+    enabled: false
+    webhook:
+      conversionReviewVersions: []
+      caBundle: null
+      url: null
+      service:
+        name: null
+        namespace: null
+        path: null
+        port: null
